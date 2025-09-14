@@ -1,0 +1,283 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Color System */
+  --background: #0B0C0F;
+  --foreground: #ffffff;
+
+  /* Brand Colors */
+  --brand-primary: #D4FF00;
+  --brand-primary-foreground: #000000;
+  --brand-secondary: #B8E000;
+  --brand-accent: #A0C000;
+
+  /* Semantic Colors */
+  --primary: #D4FF00;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #ffffff;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --accent: #D4FF00;
+  --accent-foreground: #000000;
+
+  /* Status Colors */
+  --success: #10b981;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #000000;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --info: #3b82f6;
+  --info-foreground: #ffffff;
+
+  /* Neutral Colors */
+  --border: #262626;
+  --input: #262626;
+  --ring: #D4FF00;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+
+  /* Alpha Colors */
+  --white-alpha-5: rgba(255, 255, 255, 0.05);
+  --white-alpha-10: rgba(255, 255, 255, 0.1);
+  --white-alpha-20: rgba(255, 255, 255, 0.2);
+  --white-alpha-50: rgba(255, 255, 255, 0.5);
+  --white-alpha-70: rgba(255, 255, 255, 0.7);
+
+  --black-alpha-5: rgba(0, 0, 0, 0.05);
+  --black-alpha-10: rgba(0, 0, 0, 0.1);
+  --black-alpha-20: rgba(0, 0, 0, 0.2);
+  --black-alpha-50: rgba(0, 0, 0, 0.5);
+
+  --brand-alpha-10: rgba(212, 255, 0, 0.1);
+  --brand-alpha-20: rgba(212, 255, 0, 0.2);
+  --brand-alpha-30: rgba(212, 255, 0, 0.3);
+
+  /* Typography */
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-comfortaa);
+  --font-mono: var(--font-geist-mono);
+
+  /* Border Radius System */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+
+  /* Spacing System */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* Shadow System */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-poppins: var(--font-poppins);
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  @keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes spin-around {
+  0% {
+    transform: translateZ(0) rotate(0);
+    }
+  15%, 35% {
+    transform: translateZ(0) rotate(90deg);
+    }
+  65%, 85% {
+    transform: translateZ(0) rotate(270deg);
+    }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+    }
+  }
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite
+;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+  --animate-gradient: gradient 8s linear infinite;
+  @keyframes gradient {
+  to {
+    background-position: var(--bg-size, 300%) 0;
+    }
+  }
+  --animate-shiny-text: shiny-text 8s infinite;
+  @keyframes shiny-text {
+  0%, 90%, 100% {
+    background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+  30%, 60% {
+    background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
+  --animate-background-position-spin: background-position-spin 3000ms infinite alternate;
+  @keyframes background-position-spin {
+  0% {
+    background-position: top center;
+    }
+  100% {
+    background-position: bottom center;
+    }
+  }}
+
+/* Base Styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-comfortaa), 'Comfortaa', system-ui, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Typography Classes */
+.font-heading {
+  font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif !important;
+}
+
+.font-body {
+  font-family: var(--font-comfortaa), 'Comfortaa', system-ui, sans-serif !important;
+}
+
+.font-mono {
+  font-family: var(--font-geist-mono), "Fira Code", monospace !important;
+}
+
+/* Utility Classes */
+.text-gradient-brand {
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-gradient-brand {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+              linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)) border-box;
+}
+
+.glass {
+  background: var(--white-alpha-5);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--white-alpha-10);
+}
+
+.glass-strong {
+  background: var(--white-alpha-10);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--white-alpha-20);
+}
+
+/* Animation */
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--brand-alpha-20);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--brand-alpha-30), 0 0 60px var(--brand-alpha-20);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-border-beam {
+  animation: border-beam var(--duration, 15s) infinite linear;
+  animation-delay: var(--delay, 0s);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .industry-section {
+    position: relative;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateZ(0deg);
+  }
+
+}
+
+/* Prevent overflow issues */
+html,
+body {
+  overflow-x: hidden;
+}
