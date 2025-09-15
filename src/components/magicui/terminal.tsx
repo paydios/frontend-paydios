@@ -19,7 +19,6 @@ interface SequenceContextValue {
 }
 
 const SequenceContext = createContext<SequenceContextValue | null>(null);
-
 const useSequence = () => useContext(SequenceContext);
 
 const ItemIndexContext = createContext<number | null>(null);
@@ -48,14 +47,18 @@ export const AnimatedSpan = ({
   const sequence = useSequence();
   const itemIndex = useItemIndex();
   const [hasStarted, setHasStarted] = useState(false);
+
+  const sequenceStarted = sequence?.sequenceStarted;
+  const activeIndex = sequence?.activeIndex;
+
   useEffect(() => {
     if (!sequence || itemIndex === null) return;
-    if (!sequence.sequenceStarted) return;
+    if (!sequenceStarted) return;
     if (hasStarted) return;
-    if (sequence.activeIndex === itemIndex) {
+    if (activeIndex === itemIndex) {
       setHasStarted(true);
     }
-  }, [sequence?.activeIndex, sequence?.sequenceStarted, hasStarted, itemIndex]);
+  }, [activeIndex, sequenceStarted, hasStarted, itemIndex, sequence]);
 
   const shouldAnimate = sequence ? hasStarted : startOnView ? isInView : true;
 
@@ -119,11 +122,14 @@ export const TypingAnimation = ({
   const sequence = useSequence();
   const itemIndex = useItemIndex();
 
+  const sequenceStarted = sequence?.sequenceStarted;
+  const activeIndex = sequence?.activeIndex;
+
   useEffect(() => {
     if (sequence && itemIndex !== null) {
-      if (!sequence.sequenceStarted) return;
+      if (!sequenceStarted) return;
       if (started) return;
-      if (sequence.activeIndex === itemIndex) {
+      if (activeIndex === itemIndex) {
         setStarted(true);
       }
       return;
@@ -138,15 +144,7 @@ export const TypingAnimation = ({
 
     const startTimeout = setTimeout(() => setStarted(true), delay);
     return () => clearTimeout(startTimeout);
-  }, [
-    delay,
-    startOnView,
-    isInView,
-    started,
-    sequence?.activeIndex,
-    sequence?.sequenceStarted,
-    itemIndex,
-  ]);
+  }, [delay, startOnView, isInView, started, sequenceStarted, activeIndex, itemIndex, sequence]);
 
   useEffect(() => {
     if (!started) return;
@@ -167,7 +165,7 @@ export const TypingAnimation = ({
     return () => {
       clearInterval(typingEffect);
     };
-  }, [children, duration, started]);
+  }, [children, duration, started, sequence, itemIndex]);
 
   return (
     <MotionComponent

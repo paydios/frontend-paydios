@@ -5,9 +5,6 @@ import { Hero } from "@/components/hero";
 import { Footer } from "@/components/footer";
 import AnimatedCard from "@/components/magicui/animated-card";
 import ScrollStackPage from "./scroll-stack";
-import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
-import { ArrowRightIcon } from "lucide-react";
-import SectionTitle from "@/components/SectionTitle";
 
 export default function Home() {
   return (

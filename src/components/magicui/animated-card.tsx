@@ -12,9 +12,7 @@ interface AnimatedCardProps {
 }
 
 const AnimatedCard = ({ className }: AnimatedCardProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const fromRef = useRef<HTMLDivElement>(null);
-  const toRef = useRef<HTMLDivElement>(null);
 
   // How to Connect Paydios steps
   const notifications = [

@@ -5,14 +5,14 @@ import { BorderBeam } from "./magicui/border-beam";
 export function Hero() {
   return (
     <main className="relative z-10 pt-32">
-      <div className="max-w-4xl mx-auto px-6 pt-24 pb-16">
+      <div className="max-w-4xl mx-auto px-0 lg:px-6 pt-24 pb-16">
         <div className="text-center space-y-8">
           <TextAnimate 
             animation="blurInUp" 
             by="character" 
             once
             as="h1"
-            className="text-5xl md:text-6xl font-bold tracking-tight font-poppins">
+            className="text-[32px] mb-3 md:text-6xl font-bold tracking-tight font-poppins">
             Transform payments
           </TextAnimate>
           <TextAnimate 
@@ -20,11 +20,11 @@ export function Hero() {
             by="character" 
             once
             as="h2"
-            className="text-5xl md:text-5xl font-bold tracking-tight text-primary">
+            className="text-3xl lg:text-5xl font-bold tracking-tight text-primary mb-3">
             with confidence
           </TextAnimate>
    
-            <TextAnimate animation="slideUp" by="word" delay={0.4} className="text-xl font-body text-white/70 max-w-2xl mx-auto leading-relaxed">
+            <TextAnimate animation="slideUp" by="word" delay={0.4} className="text-base mb-2 lg:mb-3  lg:text-xl font-body text-white/70 max-w-2xl mx-auto leading-relaxed">
 Secure payment gateway solution designed for modern businesses.
             Scale with confidence through enterprise-grade infrastructure.
     </TextAnimate>

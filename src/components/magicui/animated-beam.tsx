@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { motion } from "motion/react"
 import { type RefObject, useEffect, useId, useState } from "react"
 
@@ -53,17 +52,17 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
   // Calculate the gradient coordinates based on the reverse prop
   const gradientCoordinates = reverse
     ? {
-        x1: ["90%", "-10%"],
-        x2: ["100%", "0%"],
-        y1: ["0%", "0%"],
-        y2: ["0%", "0%"],
-      }
+      x1: ["90%", "-10%"],
+      x2: ["100%", "0%"],
+      y1: ["0%", "0%"],
+      y2: ["0%", "0%"],
+    }
     : {
-        x1: ["10%", "110%"],
-        x2: ["0%", "100%"],
-        y1: ["0%", "0%"],
-        y2: ["0%", "0%"],
-      }
+      x1: ["10%", "110%"],
+      x2: ["0%", "100%"],
+      y1: ["0%", "0%"],
+      y2: ["0%", "0%"],
+    }
 
   useEffect(() => {
     const updatePath = () => {
@@ -88,16 +87,14 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
     }
 
     // Initialize ResizeObserver
-    const resizeObserver = new ResizeObserver((entries) => {
-      // For all entries, recalculate the path
-      for (const entry of entries) {
-        updatePath()
-      }
+    const resizeObserver = new ResizeObserver(() => {
+      updatePath()
     })
 
     if (containerRef.current) {
       resizeObserver.observe(containerRef.current)
     }
+
 
     // Call the updatePath initially to set the initial path
     updatePath()
