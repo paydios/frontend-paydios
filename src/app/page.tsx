@@ -5,6 +5,8 @@ import { Hero } from "@/components/hero";
 import { Footer } from "@/components/footer";
 import AnimatedCard from "@/components/magicui/animated-card";
 import ScrollStackPage from "./scroll-stack";
+import CTA from "@/components/sections/cta/default";
+import GlobeSection from "@/components/GlobeSection";
 
 export default function Home() {
   return (
@@ -22,10 +24,14 @@ export default function Home() {
       <AnimatedCard />
 
       {/* Industry Showcase - ScrollStack */}
-     
- 
-    <ScrollStackPage></ScrollStackPage>
 
+      <ScrollStackPage></ScrollStackPage>
+     
+     {/* Globe section */}
+    <GlobeSection></GlobeSection>
+
+      {/* Bootom CTA */}
+      <CTA></CTA>
       {/* Footer */}
       <Footer />
     </div>

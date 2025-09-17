@@ -5,6 +5,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
+import Pricing from "@/components/Pricing";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +51,7 @@ export default function ScrollStackPage() {
 
   return (
     <div ref={root} className="relative">
-      <div className="containerCustom max-w-full lg:max-w-[1100px] mx-auto pt-[30%] lg:pt-[14%] flex justify-center mb-[1000px]">
+      <div className="containerCustom max-w-full lg:max-w-[1100px] mx-auto pt-[30%] lg:pt-[14%] flex justify-center mb-[2600px] lg:mb-[1400px] ">
         <div className="sectionWraps relative">
           {/* Section 1 */}
           <div className="sectionWrap top-[40px] mb-[50px] rounded-lg relative p-[2px] bg-[linear-gradient(180deg,rgba(212,255,0,1)_0%,rgba(237,221,83,0.05)_100%)]">
@@ -154,6 +155,9 @@ export default function ScrollStackPage() {
         </div>
 
         <SectionTitle />
+        
+         {/* Pricing */}
+      <Pricing></Pricing>
       </div>
 
     </div>
