@@ -45,7 +45,7 @@ const GlobeSection = () => {
                     </p>
               </div>
               
-                <Globe className='flex-1'/>
+                <Globe className='flex-1 w-full'/>
               
             </MagicCard>
 
