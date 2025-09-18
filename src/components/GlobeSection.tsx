@@ -36,11 +36,11 @@ const GlobeSection = () => {
                     />
                   </div>
 
-                 <h2 className="text-2xl lg:text-5xl font-poppins font-semibold py-3 ">
+                 <h2 className="text-[26px] lg:text-5xl font-poppins font-semibold py-1 ">
                      Elevate Your Payments<br></br> with <AuroraText>Paydios</AuroraText>
                  </h2>
 
-                  <p>At Paydios, we combine speed, security, and flexibility to give your business a smarter way to accept payments. From real-time support to powerful APIs and automated workflows, we make sure every transaction is seamless and reliable.  
+                  <p className='text-sm lg:text-base'>At Paydios, we combine speed, security, and flexibility to give your business a smarter way to accept payments. From real-time support to powerful APIs and automated workflows, we make sure every transaction is seamless and reliable.  
                     </p>
               </div>
               

@@ -53,7 +53,7 @@ const AnimatedCard = ({ className }: AnimatedCardProps) => {
 
     <div className="relative">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-      <MagicCard className={cn("p-5 lg:p-8 rounded-xl", className)}>
+      <MagicCard className={cn("p-2 lg:p-8 rounded-xl", className)}>
         <div className="flex flex-col justify-between items-center h-full">
           {/* Animated List Section */}
           <div className="flex-1 w-full flex flex-col justify-start items-stretch">
@@ -64,10 +64,10 @@ const AnimatedCard = ({ className }: AnimatedCardProps) => {
                   <div
                     key={idx}
                     ref={idx === 0 ? fromRef : undefined}
-                    className="flex items-start gap-4 p-4 rounded-lg transform-gpu bg-transparent dark:backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
+                    className="flex flex-col lg:flex-row items-start gap-3 lg:gap-4 p-4 rounded-lg transform-gpu bg-transparent dark:backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
                   >
                     <span className="text-2xl">{item.icon}</span>
-                    <div>
+                    <div className="space-y-2">
                       <h4 className="font-medium">{item.name}</h4>
                       <p className="text-sm text-gray-400">
                         {item.description}
@@ -82,7 +82,7 @@ const AnimatedCard = ({ className }: AnimatedCardProps) => {
         </div>
       </MagicCard>
       
-      <MagicCard className={cn("p-5 lg:p-8 rounded-xl", className)}>
+      <MagicCard className={cn("p-2 lg:p-8 rounded-xl", className)}>
         <div className="flex flex-col justify-between items-center h-full">
           {/* Animated Beam Section */}
           <div className="flex-1 flex w-full flex-col">
@@ -92,8 +92,8 @@ const AnimatedCard = ({ className }: AnimatedCardProps) => {
         </div>
       </MagicCard>
 
-      <MagicCard className={cn("p-5 lg:p-8 rounded-xl", className)}>
-        <div className="flex flex-col justify-between h-full">
+      <MagicCard className={cn("p-2 lg:p-8 rounded-xl", className)}>
+        <div className="flex flex-col justify-between h-auto">
               <h3 className="text-lg font-semibold mb-4"></h3>
           <PaymentTerminal />
         </div>

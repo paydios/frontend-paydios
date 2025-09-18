@@ -8,7 +8,7 @@ import {
 
 export function PaymentTerminal() {
   return (
-    <div className="w-full overflow-auto flex items-center justify-center">
+    <div className="w-full overflow-hidden h-auto flex items-center justify-center">
       <Terminal>
         <TypingAnimation>&gt; Initializing payment gateway...</TypingAnimation>
 
