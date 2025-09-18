@@ -9,9 +9,9 @@ import { Globe } from './ui/globe';
 
 const GlobeSection = () => {
     return (
-        <div className=' container mx-auto  mb-10 '>
+        <div className=' container mx-auto mt-10 lg:mb-10 lg:mt-0 '>
 
-            <MagicCard className='flex flex-col lg:flex-row  gap-5 p-4 min-h-[500px] rounded-lg justify-between'>
+            <MagicCard className='flex flex-col lg:flex-row  gap-5 p-2 lg:p-4 lg:min-h-[500px] rounded-lg justify-between'>
               <div className='  flex-1 flex flex-col items-start gap-5 justify-center'>
                   <div className="group relative max-w-[200px] flex items-center justify-center rounded-full px-4 py-1 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] ">
                     <span
@@ -32,20 +32,19 @@ const GlobeSection = () => {
                         Why choose us
                     </AnimatedGradientText>
                     <ChevronRight
-                        className="ml-1 size-4 stroke-neutral-500 transition-transform
- duration-300 ease-in-out group-hover:translate-x-0.5"
+                        className="ml-1 size-4 stroke-neutral-500 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
                     />
-                </div>
+                  </div>
 
-                <h2 className="text-5xl font-poppins font-semibold py-3">
+                 <h2 className="text-2xl lg:text-5xl font-poppins font-semibold py-3 ">
                      Elevate Your Payments<br></br> with <AuroraText>Paydios</AuroraText>
-                </h2>
+                 </h2>
 
-                <p>At Paydios, we combine speed, security, and flexibility to give your business a smarter way to accept payments. From real-time support to powerful APIs and automated workflows, we make sure every transaction is seamless and reliable.  
+                  <p>At Paydios, we combine speed, security, and flexibility to give your business a smarter way to accept payments. From real-time support to powerful APIs and automated workflows, we make sure every transaction is seamless and reliable.  
                     </p>
               </div>
               
-                <Globe className='flex-1'/>
+                <Globe className='flex-1 '/>
               
             </MagicCard>
 
