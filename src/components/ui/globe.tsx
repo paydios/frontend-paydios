@@ -9,19 +9,19 @@ import { cn } from "@/lib/utils";
 const MOVEMENT_DAMPING = 1400;
 
 const GLOBE_CONFIG: COBEOptions = {
-  width: 500,
-  height: 500,
+  width: 600,
+  height: 600,
   onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
   theta: 0.3,
-  dark: 1,                             // dark background
-  diffuse: 1.1,                        // slightly stronger shadows
+  dark: 1,                             // enable dark mode shading
+  diffuse: 0.5,                        // softer shadows
   mapSamples: 16000,
-  mapBrightness: 0.55,                 // dim details
-  baseColor: [0.09, 0.09, 0.09],       // ≈ #171717 (neutral-900)
+  mapBrightness: 0.65,                 // dim land/water
+  baseColor: [0, 1, 2],          // dark gray (#171717 ≈ neutral-900)
   markerColor: [1, 0.5, 0.2],          // warm orange markers
-  glowColor: [0.3, 0.7, 1],            // subtle blue glow
+  glowColor: [0.3, 0.6, 0.9],          // subtle cool glow
   markers: [
     { location: [14.5995, 120.9842], size: 0.03 },
     { location: [19.076, 72.8777], size: 0.1 },
@@ -35,6 +35,7 @@ const GLOBE_CONFIG: COBEOptions = {
     { location: [41.0082, 28.9784], size: 0.06 },
   ],
 };
+
 
 
 export function Globe({
@@ -104,7 +105,7 @@ export function Globe({
   return (
     <div
       className={cn(
-        "inset-0 mx-auto aspect-[1/1] w-full max-w-[500px]",
+        "inset-0 mx-auto aspect-[1/1] max-w-[600px]",
         className,
       )}
     >
