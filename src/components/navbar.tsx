@@ -141,8 +141,8 @@ export function Navbar() {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link href="/pricing" className="font-body text-white/90 hover:text-white bg-transparent px-4 py-2 rounded-md transition-colors">
-                      Features
+                    <Link href="/integration" className="font-body text-white/90 hover:text-white bg-transparent px-4 py-2 rounded-md transition-colors">
+                      Integration
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -156,8 +156,8 @@ export function Navbar() {
 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link href="/pricing" className="font-body text-white/90 hover:text-white bg-transparent px-4 py-2 rounded-md transition-colors">
-                      Conatct us
+                    <Link href="/contact" className="font-body text-white/90 hover:text-white bg-transparent px-4 py-2 rounded-md transition-colors">
+                      Contact us
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -253,11 +253,27 @@ export function Navbar() {
                     </div>
 
                     <Link
+                      href="/integration"
+                      className="font-body text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Integration
+                    </Link>
+
+                    <Link
                       href="/pricing"
                       className="font-body text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       Pricing
+                    </Link>
+
+                    <Link
+                      href="/contact"
+                      className="font-body text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Contact us
                     </Link>
 
 
