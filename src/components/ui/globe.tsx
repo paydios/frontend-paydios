@@ -258,7 +258,7 @@ export function Globe({ className }: { className?: string }) {
 
     // City markers with only pulse effect (no glow ring)
     const cityMarkers: { marker: THREE.Mesh; pulse: THREE.Mesh }[] = [];
-    cities.forEach((city, index) => {
+    cities.forEach((city) => {
       const position = latLngToVector3(city.lat, city.lng, 2.02);
       const size = 0.015 + (city.importance * 0.02);
       
@@ -498,11 +498,11 @@ export function Globe({ className }: { className?: string }) {
         <div className="w-full h-full rounded-full bg-gradient-radial from-blue-500/10 via-transparent to-transparent blur-xl" />
       </div>
       
-      <div className={cn(
-        "relative w-[700px] h-[700px] transition-all duration-2000 ease-out",
-        isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95",
-        className
-      )}>
+        <div className={cn(
+          "relative w-[700px] h-[700px] transition-all duration-2000 ease-out",
+          isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95",
+          className || ""
+        )}>
         <div ref={mountRef} className="w-full h-full" />
         
         {/* Floating particles matching the white dots theme */}
