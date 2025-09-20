@@ -259,7 +259,7 @@ export function Globe({ className }: { className?: string }) {
 
     // Enhanced city markers with importance-based sizing
     const cityMarkers: { marker: THREE.Mesh; ring: THREE.Mesh; pulse: THREE.Mesh }[] = [];
-    cities.forEach((city, index) => {
+    cities.forEach((city) => {
       const position = latLngToVector3(city.lat, city.lng, 2.02);
       const size = 0.015 + (city.importance * 0.02);
       
@@ -510,7 +510,7 @@ export function Globe({ className }: { className?: string }) {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center">
+    <div className={`relative flex flex-col items-center ${className || ''}`}>
       {/* Enhanced atmospheric glow with realistic earth tones */}
       <div className="absolute inset-0 rounded-full opacity-30">
         <div className="w-full h-full rounded-full bg-gradient-radial from-slate-400/15 via-slate-500/8 via-slate-600/4 to-transparent blur-3xl" />

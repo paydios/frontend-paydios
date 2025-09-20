@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { BorderBeam } from "@/components/magicui/border-beam";
 
 export function Footer() {
   return (
@@ -32,20 +31,11 @@ export function Footer() {
             <div className="relative">
               <Button
                 asChild
-                className="inline-flex items-center gap-2 rounded-xl bg-[#D4FF00] text-black font-heading font-semibold hover:text-[#D4FF00] hover:bg-transparent border border-[#D4FF00] transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#D4FF00] text-black font-heading font-semibold hover:text-black hover:bg-transparent border border-[#D4FF00] transition-all duration-300"
               >
                 <Link href="/contact">
                   Need a Payment Gateway?
-                  <BorderBeam
-                    size={40}
-                    initialOffset={20}
-                    className="from-transparent via-[#D4FF00] to-transparent"
-                    transition={{
-                      type: "spring",
-                      stiffness: 60,
-                      damping: 20,
-                    }}
-                  />
+   
                 </Link>
               </Button>
             </div>
@@ -140,47 +130,10 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-center md:text-left">
-              <p className="text-white/50 font-body text-sm">
-                &copy; 2024 Paydios. Built for modern businesses.
-              </p>
-            </div>
-            
-            {/* Payment Icons */}
-            <div className="flex items-center gap-4">
-              <span className="text-white/50 font-body text-sm">We accept:</span>
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/images/icons/visa.svg"
-                  alt="Visa"
-                  width={32}
-                  height={20}
-                  className="opacity-70 hover:opacity-100 transition-opacity"
-                />
-                <Image
-                  src="/images/icons/american-express.png"
-                  alt="American Express"
-                  width={32}
-                  height={20}
-                  className="opacity-70 hover:opacity-100 transition-opacity"
-                />
-                <Image
-                  src="/images/icons/apple-pay.png"
-                  alt="Apple Pay"
-                  width={32}
-                  height={20}
-                  className="opacity-70 hover:opacity-100 transition-opacity"
-                />
-                <Image
-                  src="/images/icons/google_pay.svg"
-                  alt="Google Pay"
-                  width={32}
-                  height={20}
-                  className="opacity-70 hover:opacity-100 transition-opacity"
-                />
-              </div>
-            </div>
+          <div className="text-center">
+            <p className="text-white/50 font-body text-sm">
+              &copy; 2024 Paydios. Built for modern businesses.
+            </p>
           </div>
         </div>
       </div>

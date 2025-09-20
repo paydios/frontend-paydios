@@ -66,7 +66,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-2xl font-heading font-semibold text-white mb-4">5. Disclaimer</h2>
             <p className="text-white/70 text-lg leading-relaxed">
-              The materials on Paydios website are provided on an 'as is' basis. Paydios makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+              The materials on Paydios website are provided on an &apos;as is&apos; basis. Paydios makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
             </p>
           </section>
 
@@ -87,7 +87,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-2xl font-heading font-semibold text-white mb-4">8. Links</h2>
             <p className="text-white/70 text-lg leading-relaxed">
-              Paydios has not reviewed all of the sites linked to our website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Paydios of the site. Use of any such linked website is at the user's own risk.
+              Paydios has not reviewed all of the sites linked to our website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Paydios of the site. Use of any such linked website is at the user&apos;s own risk.
             </p>
           </section>
 

@@ -170,7 +170,7 @@ export function Navbar() {
           </div>
           <div className="relative invisible md:visible">
             <Button
-              className="inline-flex items-center gap-2 rounded-xl bg-[var(--primary)] text-black font-heading font-semibold hover:text-[var(--primary)] hover:bg-transparent"
+              className="inline-flex items-center gap-2 rounded-xl bg-[var(--primary)] text-black font-heading font-semibold hover:text-black hover:bg-transparent"
             >
               <Icons.logIn className="h-4 w-4" />
               Sign in

@@ -1,5 +1,4 @@
 import React from 'react';
-import { MagicCard } from './magicui/magic-card';
 import { cn } from '@/lib/utils';
 import { AnimatedGradientText } from './magicui/animated-gradient-text';
 import { ChevronRight } from 'lucide-react';

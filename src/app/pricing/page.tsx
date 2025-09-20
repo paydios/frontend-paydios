@@ -3,7 +3,6 @@
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { UnicornStudioBackground } from "@/components/unicorn-background";
-import { PageHero } from "@/components/page-hero";
 import Pricing from "@/components/Pricing";
 
 export default function PricingPage() {
