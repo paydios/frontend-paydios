@@ -125,7 +125,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-white/70 hover:text-white font-body text-sm transition-colors">
+                <Link href="/terms-of-service" className="text-white/70 hover:text-white font-body text-sm transition-colors">
                   Terms of Service
                 </Link>
               </li>
