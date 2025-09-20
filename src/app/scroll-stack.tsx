@@ -157,7 +157,7 @@ export default function ScrollStackPage() {
         <SectionTitle />
         
          {/* Pricing */}
-      <Pricing></Pricing>
+      <Pricing className="top-[63%] lg:top-[75%]"></Pricing>
       </div>
 
     </div>

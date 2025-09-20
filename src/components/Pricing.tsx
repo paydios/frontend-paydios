@@ -12,8 +12,8 @@ interface PricingProps {
 }
 
 export default function Pricing({
-  title = "Clear Pricing for Transactions",
-  description = "Our Commission Deducted, Your Money Deposited — Single Banking Day to Your Merchant Account.",
+  title = "Pricing",
+  description = "Choose the perfect plan for your business. Transparent pricing with no hidden fees. Scale as you grow with our flexible payment solutions.",
     plans = [
   {
     name: "Individual",
@@ -65,15 +65,15 @@ export default function Pricing({
 }: PricingProps) {
   return (
     <Section className={cn(className)}>
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-12">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 overflow-hidden">
         {(title || description) && (
-          <div className="flex flex-col items-center gap-3 px-4 text-center sm:gap-8">
+          <div className="flex flex-col items-center gap-3 px-4 text-center sm:gap-8 overflow-hidden">
             {title && (
               <TextAnimate
                 as={"h2"}
                 animation="blurInUp"
                 by="character"
-                className="text-4xl font-poppins leading-tight font-semibold sm:leading-tight"
+                className="text-4xl font-poppins leading-tight font-semibold sm:leading-tight overflow-hidden"
               >
                 {title}
               </TextAnimate>
@@ -83,7 +83,7 @@ export default function Pricing({
                 as={"p"}
                 animation="fadeIn"
                 by="character"
-                className="text-base text-muted-foreground mt-0 lg:-mt-4 max-w-[700px] font-normal"
+                className="text-base text-muted-foreground mt-0 lg:-mt-4 max-w-[700px] font-normal overflow-hidden"
               >
                 {description}
               </TextAnimate>
@@ -91,7 +91,7 @@ export default function Pricing({
           </div>
         )}
         {plans !== false && plans.length > 0 && (
-          <div className="max-w-container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="max-w-container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 bg-black">
             {plans.map((plan) => (
               <PricingColumn
                 key={plan.name}

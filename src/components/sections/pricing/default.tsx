@@ -10,7 +10,7 @@ export function Section({ children, className }: SectionProps) {
   return (
     <section
       data-slot="section"
-      className={cn("absolute w-full py-16 sm:py-24 top-[63%] lg:top-[75%]", className)}
+      className={cn("absolute w-full py-16 sm:py-24 ", className)}
     >
       {children}
     </section>
