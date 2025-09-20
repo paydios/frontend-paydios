@@ -128,18 +128,18 @@ const generateContinentDots = () => {
   return dots;
 };
 
-// Major cities with more realistic, subtle colors
+// Major cities with brand color (#d4ff00 lime green)
 const cities = [
-  { name: 'New York', lat: 40.7128, lng: -74.006, color: 0xe74c3c, importance: 1.0 },
-  { name: 'London', lat: 51.5074, lng: -0.1278, color: 0xf39c12, importance: 1.0 },
-  { name: 'Tokyo', lat: 35.6762, lng: 139.6503, color: 0x9b59b6, importance: 0.9 },
-  { name: 'Singapore', lat: 1.3521, lng: 103.8198, color: 0x3498db, importance: 0.8 },
-  { name: 'Sydney', lat: -33.8688, lng: 151.2093, color: 0x2ecc71, importance: 0.7 },
-  { name: 'San Francisco', lat: 37.7749, lng: -122.4194, color: 0xe67e22, importance: 0.9 },
-  { name: 'Dubai', lat: 25.2048, lng: 55.2708, color: 0xf1c40f, importance: 0.8 },
-  { name: 'Mumbai', lat: 19.0760, lng: 72.8777, color: 0x1abc9c, importance: 0.8 },
-  { name: 'São Paulo', lat: -23.5505, lng: -46.6333, color: 0x34495e, importance: 0.7 },
-  { name: 'Hong Kong', lat: 22.3193, lng: 114.1694, color: 0x8e44ad, importance: 0.8 }
+  { name: 'New York', lat: 40.7128, lng: -74.006, color: 0xd4ff00, importance: 1.0 }, // Brand lime green
+  { name: 'London', lat: 51.5074, lng: -0.1278, color: 0xd4ff00, importance: 1.0 }, // Brand lime green
+  { name: 'Tokyo', lat: 35.6762, lng: 139.6503, color: 0xd4ff00, importance: 0.9 }, // Brand lime green
+  { name: 'Singapore', lat: 1.3521, lng: 103.8198, color: 0xd4ff00, importance: 0.8 }, // Brand lime green
+  { name: 'Sydney', lat: -33.8688, lng: 151.2093, color: 0xd4ff00, importance: 0.7 }, // Brand lime green
+  { name: 'San Francisco', lat: 37.7749, lng: -122.4194, color: 0xd4ff00, importance: 0.9 }, // Brand lime green
+  { name: 'Dubai', lat: 25.2048, lng: 55.2708, color: 0xd4ff00, importance: 0.8 }, // Brand lime green
+  { name: 'Mumbai', lat: 19.0760, lng: 72.8777, color: 0xd4ff00, importance: 0.8 }, // Brand lime green
+  { name: 'São Paulo', lat: -23.5505, lng: -46.6333, color: 0xd4ff00, importance: 0.7 }, // Brand lime green
+  { name: 'Hong Kong', lat: 22.3193, lng: 114.1694, color: 0xd4ff00, importance: 0.8 } // Brand lime green
 ];
 
 export function Globe({ className }: { className?: string }) {
@@ -177,8 +177,8 @@ export function Globe({ className }: { className?: string }) {
     if (!mountRef.current) return;
 
     const container = mountRef.current;
-    const width = 700;
-    const height = 700;
+    const width = 1000;
+    const height = 1000;
 
     // Create scene with more sophisticated fog
     const scene = new THREE.Scene();
@@ -208,20 +208,20 @@ export function Globe({ className }: { className?: string }) {
     scene.add(globeGroup);
     globeGroupRef.current = globeGroup;
 
-    // Layer 1: Ocean base (more realistic deep ocean color from the image)
+    // Layer 1: Ocean base (your brand dark blue)
     const oceanGeometry = new THREE.SphereGeometry(2, 64, 64);
     const oceanMaterial = new THREE.MeshLambertMaterial({
-      color: 0x1a2b4a, // Darker blue matching your image
+      color: 0x062056, // Your specified dark blue
       transparent: true,
-      opacity: 0.98
+      opacity: 1.0
     });
     const oceanSphere = new THREE.Mesh(oceanGeometry, oceanMaterial);
     globeGroup.add(oceanSphere);
 
-    // Layer 2: Atmospheric glow (more subtle, realistic atmosphere)
-    const atmosphereGeometry = new THREE.SphereGeometry(2.08, 32, 32);
+    // Layer 2: Atmospheric glow (subtle complement to brand colors)
+    const atmosphereGeometry = new THREE.SphereGeometry(2.12, 32, 32);
     const atmosphereMaterial = new THREE.MeshBasicMaterial({
-      color: 0x4a5568, // Subtle grayish atmosphere
+      color: 0x4a90e2, // Subtle blue complement to lime green
       transparent: true,
       opacity: 0.08,
       side: THREE.BackSide
@@ -229,19 +229,18 @@ export function Globe({ className }: { className?: string }) {
     const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
     globeGroup.add(atmosphere);
 
-    // Layer 3: Land dots with sunflower pattern distribution
-    const dotGeometry = new THREE.SphereGeometry(0.006, 8, 8);
+    // Layer 3: Land dots with exact positioning and colors from your reference image
+    const dotGeometry = new THREE.SphereGeometry(0.008, 8, 8); // Slightly larger dots for better visibility
     const dotMeshes: THREE.Mesh[] = [];
     
     continentDots.current.forEach((dot) => {
       const position = latLngToVector3(dot.lat, dot.lng, 2.005);
       
-      // More realistic land colors based on your image - subtle blue-white dots
-      const landColors = [0x6b8db5, 0x7a96c0, 0x8ba3cb, 0x9cb0d6]; // Subtle blue-gray tones
-      const colorIndex = Math.floor(Math.random() * landColors.length);
+      // White dots for normal map points
+      const dotColor = 0xffffff; // Pure white
       
       const dotMaterial = new THREE.MeshBasicMaterial({
-        color: landColors[colorIndex],
+        color: dotColor,
         transparent: true,
         opacity: 0.8 * dot.brightness
       });
@@ -257,9 +256,9 @@ export function Globe({ className }: { className?: string }) {
       dotMeshes.push(dotMesh);
     });
 
-    // Enhanced city markers with importance-based sizing
-    const cityMarkers: { marker: THREE.Mesh; ring: THREE.Mesh; pulse: THREE.Mesh }[] = [];
-    cities.forEach((city) => {
+    // City markers with only pulse effect (no glow ring)
+    const cityMarkers: { marker: THREE.Mesh; pulse: THREE.Mesh }[] = [];
+    cities.forEach((city, index) => {
       const position = latLngToVector3(city.lat, city.lng, 2.02);
       const size = 0.015 + (city.importance * 0.02);
       
@@ -272,21 +271,7 @@ export function Globe({ className }: { className?: string }) {
       marker.position.copy(position);
       globeGroup.add(marker);
 
-      // Glow ring
-      const ringSize = size * 2.5;
-      const ringGeometry = new THREE.RingGeometry(ringSize * 0.8, ringSize * 1.2, 24);
-      const ringMaterial = new THREE.MeshBasicMaterial({
-        color: city.color,
-        transparent: true,
-        opacity: 0.3,
-        side: THREE.DoubleSide
-      });
-      const ring = new THREE.Mesh(ringGeometry, ringMaterial);
-      ring.position.copy(position);
-      ring.lookAt(new THREE.Vector3(0, 0, 0));
-      globeGroup.add(ring);
-
-      // Pulse effect
+      // Pulse effect only
       const pulseGeometry = new THREE.SphereGeometry(size * 1.5, 12, 12);
       const pulseMaterial = new THREE.MeshBasicMaterial({
         color: city.color,
@@ -298,7 +283,7 @@ export function Globe({ className }: { className?: string }) {
       pulse.position.copy(position);
       globeGroup.add(pulse);
 
-      cityMarkers.push({ marker, ring, pulse });
+      cityMarkers.push({ marker, pulse });
     });
 
     // Enhanced arc connections with more realistic flow
@@ -330,18 +315,14 @@ export function Globe({ className }: { className?: string }) {
       
       const arcGeometry = new THREE.BufferGeometry().setFromPoints(points);
       
-      // Color based on flow intensity
-      const baseColor = new THREE.Color().lerpColors(
-        new THREE.Color(0x3b82f6),
-        new THREE.Color(0xef4444),
-        intensity
-      );
+      // Brand color for arc lines
+      const baseColor = new THREE.Color(0xd4ff00); // Your brand lime green color
       
       const arcMaterial = new THREE.LineBasicMaterial({
         color: baseColor,
         transparent: true,
-        opacity: 0.6 * intensity,
-        linewidth: 1
+        opacity: 0.8 * intensity,
+        linewidth: 4 // Increased thickness for better visibility
       });
       
       const arc = new THREE.Line(arcGeometry, arcMaterial);
@@ -431,17 +412,14 @@ export function Globe({ className }: { className?: string }) {
         (dot.material as THREE.MeshBasicMaterial).opacity = dot.userData.originalOpacity * (0.3 + 0.7 * Math.abs(twinkle));
       });
 
-      // Enhanced city animations
-      cityMarkers.forEach(({ marker, ring, pulse }, index) => {
+      // City animations - only pulse effect now
+      cityMarkers.forEach(({ marker, pulse }, index) => {
         const city = cities[index];
         const pulseTime = time * 2 + index * 0.5;
         
         // Main marker pulse
         const scale = 1 + Math.sin(pulseTime) * 0.15 * city.importance;
         marker.scale.setScalar(scale);
-        
-        // Ring rotation
-        ring.rotation.z += 0.01 * city.importance;
         
         // Pulse effect
         const pulsePhase = (time * 1.5 + index) % 3;
@@ -472,7 +450,7 @@ export function Globe({ className }: { className?: string }) {
       });
 
       // Subtle atmosphere pulsing
-      (atmosphere.material as THREE.MeshBasicMaterial).opacity = 0.08 + Math.sin(time * 0.5) * 0.02;
+      (atmosphere.material as THREE.MeshBasicMaterial).opacity = 0.12 + Math.sin(time * 0.5) * 0.03;
 
       renderer.render(scene, camera);
     };
@@ -510,30 +488,29 @@ export function Globe({ className }: { className?: string }) {
   }, []);
 
   return (
-    <div className={`relative flex flex-col items-center ${className || ''}`}>
-      {/* Enhanced atmospheric glow with realistic earth tones */}
-      <div className="absolute inset-0 rounded-full opacity-30">
-        <div className="w-full h-full rounded-full bg-gradient-radial from-slate-400/15 via-slate-500/8 via-slate-600/4 to-transparent blur-3xl" />
+    <div className="relative flex flex-col items-center">
+      {/* Brand-themed atmospheric effects */}
+      <div className="absolute inset-0 rounded-full opacity-20">
+        <div className="w-full h-full rounded-full bg-gradient-radial from-blue-600/15 via-blue-700/8 to-transparent blur-3xl" />
       </div>
       
-      <div className="absolute inset-8 rounded-full opacity-40">
-        <div className="w-full h-full rounded-full bg-gradient-radial from-slate-300/10 via-transparent to-transparent blur-xl" />
+      <div className="absolute inset-8 rounded-full opacity-30">
+        <div className="w-full h-full rounded-full bg-gradient-radial from-blue-500/10 via-transparent to-transparent blur-xl" />
       </div>
       
       <div className={cn(
         "relative w-[700px] h-[700px] transition-all duration-2000 ease-out",
         isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95",
+        className
       )}>
         <div ref={mountRef} className="w-full h-full" />
         
-
-        
-        {/* Floating particles */}
+        {/* Floating particles matching the white dots theme */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
           {Array.from({ length: 8 }).map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
+              className="absolute w-1 h-1 bg-white/40 rounded-full animate-pulse"
               style={{
                 left: `${20 + (i * 60 + 20) % 60}%`,
                 top: `${30 + (i * 40 + 15) % 40}%`,
@@ -541,37 +518,6 @@ export function Globe({ className }: { className?: string }) {
               }}
             />
           ))}
-        </div>
-      </div>
-      
-      <div className="mt-8 flex items-center justify-center space-x-12 text-xs">
-        <div className="flex items-center space-x-3 text-gray-400">
-          <div className="relative">
-            <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-            <div className="absolute inset-0 w-2 h-2 rounded-full bg-blue-400 animate-ping opacity-20" />
-          </div>
-          <span className="font-medium">Global Network</span>
-        </div>
-        
-        <div className="flex items-center space-x-3 text-gray-400">
-          <div className="flex space-x-1">
-            {['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#f0932b'].map((color, i) => (
-              <div
-                key={i}
-                className="w-1.5 h-1.5 rounded-full animate-pulse"
-                style={{
-                  backgroundColor: color,
-                  animationDelay: `${i * 0.2}s`
-                }}
-              />
-            ))}
-          </div>
-          <span className="font-medium">Live Connections</span>
-        </div>
-
-        <div className="flex items-center space-x-3 text-gray-400">
-          <div className="text-blue-400 font-mono text-sm">60fps</div>
-          <span className="font-medium">Performance</span>
         </div>
       </div>
 
