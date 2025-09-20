@@ -29,7 +29,6 @@ export default function Home() {
      
      {/* Globe section */}
     <GlobeSection></GlobeSection>
-
       {/* Bootom CTA */}
       <CTA></CTA>
       {/* Footer */}
