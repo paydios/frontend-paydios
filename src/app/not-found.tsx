@@ -2,9 +2,7 @@
 
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { UnicornStudioBackground } from "@/components/unicorn-background";
 import { Button } from "@/components/ui/button";
-import { BorderBeam } from "@/components/magicui/border-beam";
 import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -13,14 +11,13 @@ import { Home, ArrowLeft, Search, AlertCircle } from "lucide-react";
 export default function NotFound() {
   return (
     <div className="min-h-screen text-white overflow-hidden relative mx-auto flex flex-col px-3">
-      {/* UnicornStudio 3D Background */}
-      <UnicornStudioBackground />
+
 
       {/* Glass Navbar */}
       <Navbar />
 
       {/* Main Content */}
-      <div className="flex-1 flex items-center justify-center relative z-10">
+      <div className="flex-1 flex items-center justify-center relative z-10 pt-32">
         <div className="max-w-4xl mx-auto px-6 text-center">
           {/* Animated 404 Number */}
           <motion.div
@@ -139,16 +136,7 @@ export default function NotFound() {
                 <Link href="/">
                   <Home className="w-5 h-5" />
                   Go Home
-                  <BorderBeam
-                    size={40}
-                    initialOffset={20}
-                    className="from-transparent via-[#D4FF00] to-transparent"
-                    transition={{
-                      type: "spring",
-                      stiffness: 60,
-                      damping: 20,
-                    }}
-                  />
+                
                 </Link>
               </Button>
             </motion.div>

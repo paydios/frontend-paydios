@@ -76,12 +76,14 @@ export function Navbar() {
         <nav className="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
           {/* Simplified Logo Section */}
           <div className="flex items-center">
-            <span
-              className="text-xl font-body font-semibold tracking-tight text-[#D4FF00]"
-              style={{ letterSpacing: '-0.02em' }}
-            >
-              paydios
-            </span>
+            <Link href="/" className="hover:opacity-80 transition-opacity">
+              <span
+                className="text-xl font-body font-semibold tracking-tight text-[#D4FF00]"
+                style={{ letterSpacing: '-0.02em' }}
+              >
+                paydios
+              </span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -208,12 +210,14 @@ export function Navbar() {
                 <div className="flex flex-col h-full">
                   {/* Simplified Mobile Logo */}
                   <div className="flex items-center p-4 border-b border-white/10">
-                    <span
-                      className="text-xl font-body font-semibold tracking-tight text-[#D4FF00]"
-                      style={{ letterSpacing: '-0.02em' }}
-                    >
-                      paydios
-                    </span>
+                    <Link href="/" className="hover:opacity-80 transition-opacity" onClick={() => setIsOpen(false)}>
+                      <span
+                        className="text-xl font-body font-semibold tracking-tight text-[#D4FF00]"
+                        style={{ letterSpacing: '-0.02em' }}
+                      >
+                        paydios
+                      </span>
+                    </Link>
                   </div>
 
                   {/* Mobile Navigation Items */}
