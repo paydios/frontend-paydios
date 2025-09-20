@@ -5,50 +5,52 @@ import { Footer } from "@/components/footer";
 import { UnicornStudioBackground } from "@/components/unicorn-background";
 import { PageHero } from "@/components/page-hero";
 import { MagicCard } from "@/components/magicui/magic-card";
+import { FaWordpress, FaShopify, FaReact, FaLaravel, FaPhp } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 
 export default function IntegrationPage() {
   const integrations = [
     {
       title: "WordPress",
       description: "Seamlessly integrate Paydios payment gateway with your WordPress website. Easy setup with our dedicated plugin.",
-      icon: "📝",
+      icon: FaWordpress,
       features: ["Plugin Installation", "Custom Forms", "WooCommerce Support", "Easy Configuration"],
-      status: "Available"
+      status: "Coming Soon"
     },
     {
       title: "Shopify",
       description: "Accept payments on your Shopify store with our secure payment gateway integration. Boost your conversion rates.",
-      icon: "🛒",
+      icon: FaShopify,
       features: ["Store Integration", "Checkout Optimization", "Multi-Currency", "Analytics Dashboard"],
-      status: "Available"
+      status: "Coming Soon"
     },
     {
       title: "React",
       description: "Build powerful payment experiences with our React SDK. Perfect for modern web applications and SPAs.",
-      icon: "⚛️",
+      icon: FaReact,
       features: ["React SDK", "Hooks Support", "TypeScript Ready", "Component Library"],
-      status: "Available"
+      status: "Coming Soon"
     },
     {
       title: "Next.js",
       description: "Server-side rendering support with our Next.js integration. Optimized for performance and SEO.",
-      icon: "▲",
+      icon: SiNextdotjs,
       features: ["SSR Support", "API Routes", "Middleware", "Performance Optimized"],
-      status: "Available"
+      status: "Coming Soon"
     },
     {
       title: "Laravel",
       description: "PHP developers can easily integrate Paydios with Laravel using our comprehensive package and documentation.",
-      icon: "🐘",
+      icon: FaLaravel,
       features: ["Laravel Package", "Eloquent Models", "Artisan Commands", "Blade Components"],
-      status: "Available"
+      status: "Coming Soon"
     },
     {
       title: "PHP",
       description: "Simple PHP integration for any website or application. Lightweight and easy to implement.",
-      icon: "💻",
+      icon: FaPhp,
       features: ["Simple API", "cURL Support", "Webhook Handling", "Documentation"],
-      status: "Available"
+      status: "Coming Soon"
     }
   ];
 
@@ -72,7 +74,7 @@ export default function IntegrationPage() {
           {integrations.map((integration) => (
             <MagicCard
               key={integration.title}
-              className="h-full border border-white/10"
+              className="h-full border border-white/10 rounded-lg"
               gradientColor="rgba(212, 255, 0, 0.1)"
               gradientOpacity={0.1}
               gradientFrom="#D4FF00"
@@ -81,7 +83,19 @@ export default function IntegrationPage() {
               <div className="p-6 h-full flex flex-col">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="text-4xl">{integration.icon}</div>
+                  <div className="p-3 bg-white/10 rounded-lg">
+                    <integration.icon 
+                      className="w-8 h-8" 
+                      style={{
+                        color: integration.title === 'WordPress' ? '#21759b' :
+                               integration.title === 'Shopify' ? '#96bf48' :
+                               integration.title === 'React' ? '#61dafb' :
+                               integration.title === 'Next.js' ? '#000000' :
+                               integration.title === 'Laravel' ? '#ff2d20' :
+                               integration.title === 'PHP' ? '#777bb4' : '#D4FF00'
+                      }}
+                    />
+                  </div>
                   <div>
                     <h3 className="text-xl font-heading font-semibold text-white mb-1">
                       {integration.title}
