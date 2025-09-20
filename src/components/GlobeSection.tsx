@@ -9,9 +9,8 @@ import { Globe } from './ui/globe';
 
 const GlobeSection = () => {
     return (
-        <div className=' container mx-auto mt-10 lg:mb-10 lg:mt-0 '>
+        <div className=' container mx-auto mt-10 lg:mb-10 lg:mt-0 flex flex-col lg:flex-row  gap-5 p-2 lg:p-4 lg:min-h-[500px] rounded-lg justify-between'>
 
-            <MagicCard className='flex flex-col lg:flex-row  gap-5 p-2 lg:p-4 lg:min-h-[500px] rounded-lg justify-between'>
                 <div className='  flex-1 flex flex-col items-start gap-5 justify-center'>
                     <div className="group relative max-w-[200px] flex items-center justify-center rounded-full px-4 py-1 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] ">
                         <span
@@ -46,8 +45,7 @@ const GlobeSection = () => {
 
                 <Globe className="lg:max-w-[600px] w-full aspect-square" />
 
-            </MagicCard>
-
+            
         </div>
     );
 };
