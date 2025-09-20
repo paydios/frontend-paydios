@@ -523,7 +523,6 @@ export function Globe({ className }: { className?: string }) {
       <div className={cn(
         "relative w-[700px] h-[700px] transition-all duration-2000 ease-out",
         isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95",
-        className
       )}>
         <div ref={mountRef} className="w-full h-full" />
         
