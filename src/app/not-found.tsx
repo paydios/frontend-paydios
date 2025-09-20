@@ -203,25 +203,53 @@ export default function NotFound() {
 
       {/* Floating Particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-[#D4FF00]/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
+        {Array.from({ length: 20 }).map((_, i) => {
+          // Use deterministic positioning based on index to avoid hydration mismatch
+          const positions = [
+            { left: 8.3, top: 37.8 },
+            { left: 69.9, top: 63.5 },
+            { left: 50.8, top: 54.2 },
+            { left: 67.1, top: 74.9 },
+            { left: 35.2, top: 65.6 },
+            { left: 50.6, top: 71.6 },
+            { left: 23.3, top: 99.7 },
+            { left: 21.6, top: 33.5 },
+            { left: 46.0, top: 95.3 },
+            { left: 10.3, top: 18.9 },
+            { left: 64.7, top: 3.9 },
+            { left: 50.9, top: 75.8 },
+            { left: 79.5, top: 41.7 },
+            { left: 27.5, top: 69.0 },
+            { left: 7.6, top: 82.5 },
+            { left: 82.1, top: 82.8 },
+            { left: 94.7, top: 57.9 },
+            { left: 39.6, top: 40.2 },
+            { left: 3.1, top: 14.5 },
+            { left: 12.4, top: 51.6 },
+          ];
+          
+          const pos = positions[i] || { left: 50, top: 50 };
+          
+          return (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-[#D4FF00]/30 rounded-full"
+              style={{
+                left: `${pos.left}%`,
+                top: `${pos.top}%`,
+              }}
+              animate={{
+                y: [0, -100, 0],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: 3 + (i % 3) * 0.5, // Use index-based duration instead of random
+                repeat: Infinity,
+                delay: (i % 5) * 0.4, // Use index-based delay instead of random
+              }}
+            />
+          );
+        })}
       </div>
 
       {/* Footer */}
