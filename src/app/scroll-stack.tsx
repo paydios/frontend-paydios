@@ -6,7 +6,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
 import Pricing from "@/components/Pricing";
-import { GlobeDemo } from "@/components/GlobeDemo";
 
 gsap.registerPlugin(ScrollTrigger);
 

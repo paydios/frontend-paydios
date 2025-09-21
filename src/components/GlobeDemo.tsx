@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
-import GlobeSection from "./GlobeSection";
 import { AnimatedGradientText } from "./magicui/animated-gradient-text";
 import { ChevronRight } from "lucide-react";
 import { AuroraText } from "./ui/aurora-text";
