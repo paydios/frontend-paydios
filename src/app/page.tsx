@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 import AnimatedCard from "@/components/magicui/animated-card";
 import ScrollStackPage from "./scroll-stack";
 import CTA from "@/components/sections/cta/default";
-import GlobeSection from "@/components/GlobeSection";
+import { GlobeDemo } from "@/components/GlobeDemo";
 
 export default function Home() {
   return (
@@ -28,7 +28,9 @@ export default function Home() {
       <ScrollStackPage></ScrollStackPage>
      
      {/* Globe section */}
-    <GlobeSection></GlobeSection>
+    
+      <GlobeDemo></GlobeDemo>
+  
       {/* Bootom CTA */}
       <CTA></CTA>
       {/* Footer */}
