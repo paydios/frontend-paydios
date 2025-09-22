@@ -34,7 +34,7 @@ export default function Home() {
       <GlobeDemo></GlobeDemo>
   
       {/* Bootom CTA */}
-      <div className="px-2 lg:px-0">
+      <div className="px-2 lg:px-0  container mx-auto">
         <CTA></CTA>
       </div>
       <div className="px-2 lg:px-0">
