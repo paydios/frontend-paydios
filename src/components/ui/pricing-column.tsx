@@ -54,7 +54,7 @@ export function PricingColumn({
 }: PricingColumnProps) {
   return (
     <div
-      className={`${cn(pricingColumnVariants({ variant, className }))} border`}
+      className={`${cn(pricingColumnVariants({ variant, className }))} border bg-black`}
       {...props}
     >
       {/* Top divider */}

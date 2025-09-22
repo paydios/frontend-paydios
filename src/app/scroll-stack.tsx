@@ -4,8 +4,6 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
-import SectionTitle from "@/components/SectionTitle";
-import Pricing from "@/components/Pricing";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -154,10 +152,6 @@ export default function ScrollStackPage() {
           </div>
         </div>
 
-        <SectionTitle />
-        
-         {/* Pricing */}
-      <Pricing className="absolute top-[63%] lg:top-[80%]"></Pricing>
 
       </div>
 

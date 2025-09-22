@@ -16,7 +16,7 @@ export default function PricingPage() {
 
       {/* Pricing Content */}
       <div className="relative z-10 flex-1">
-        <Pricing />
+        <Pricing className="mt-20" />
       </div>
 
       {/* Footer */}

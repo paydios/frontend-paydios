@@ -91,7 +91,7 @@ export default function Pricing({
           </div>
         )}
         {plans !== false && plans.length > 0 && (
-          <div className="max-w-container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 bg-black">
+          <div className="max-w-container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {plans.map((plan) => (
               <PricingColumn
                 key={plan.name}

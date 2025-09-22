@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export function Footer() {
   return (
     <footer className="relative z-10 border-t border-white/10 mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="container mx-auto lg:px-3 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Logo and Description */}
@@ -132,7 +132,7 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="text-center">
             <p className="text-white/50 font-body text-sm">
-              &copy; 2024 Paydios. Built for modern businesses.
+              &copy; 2025 Paydios. Built for modern businesses.
             </p>
           </div>
         </div>

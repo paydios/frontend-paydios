@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { TextAnimate } from './magicui/text-animate';
 const SectionTitle = () => {
     return (
-        <div className='absolute top-10 lg:top-40 left-0 right-0 mx-auto -z-10'>
+        <div className='  container mx-auto my-10'>
             <div className={cn(
                 "group mx-auto max-w-[200px] rounded-full border text-base text-white hover:text-black transition-all ease-in hover:cursor-pointer border-white/5 bg-neutral-900 hover:bg-white",
             )}>

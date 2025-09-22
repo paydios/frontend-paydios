@@ -14,7 +14,7 @@ function Section({ children, className }: SectionProps) {
     <section
       data-slot="section"
       className={cn(
-        "relative w-full overflow-hidden bg-background text-foreground px-4 py-12 sm:py-24 md:py-32 pt-0 md:pt-0",
+        "relative w-full overflow-hidden bg-background text-foreground mx-2 lg:mx-0 px-4 py-12 sm:py-24 md:py-32 pt-0 md:pt-0",
         className
       )}
     >

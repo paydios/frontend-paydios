@@ -400,7 +400,7 @@ export function GlobeDemo() {
 
     return (
 
-        <div className="flex flex-col  lg:flex-row min-h-screen items-center justify-between md:h-auto mx-auto container relative w-full">
+        <div className="flex flex-col px-2 lg:px-0 lg:flex-row min-h-screen items-center justify-between md:h-auto mx-auto container relative w-full">
 
             <div className='max-w-2xl mt-[10%] lg:mt-0 flex flex-col gap-5 justify-center'>
                 <div className="group relative max-w-[200px] flex items-center justify-center rounded-full px-4 py-1 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] ">
@@ -435,7 +435,7 @@ export function GlobeDemo() {
             </div>
             <div className="mx-auto w-full absolute h-full top-[40%]  lg:top-0  lg:-right-[40%] md:h-[40rem] ">
                 <div className="absolute w-full inset-x-0 pointer-events-none select-none z-40" />
-                <div className="absolute w-full h-[400px] lg:h-[1000px]   z-1">
+                <div className="absolute w-full h-[500px] lg:h-[900px]   z-1">
                     <World data={sampleArcs} globeConfig={globeConfig} />
                 </div>
             </div>
