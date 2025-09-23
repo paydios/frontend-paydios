@@ -132,7 +132,7 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="text-center">
             <p className="text-white/50 font-body text-sm">
-              &copy;2025 Paydios. All rights reserved
+              &copy;2025 Paydios.  All rights reserved.
             </p>
           </div>
         </div>
