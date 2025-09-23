@@ -8,6 +8,7 @@ import CTA from "@/components/sections/cta/default";
 import { GlobeDemo } from "@/components/GlobeDemo";
 import Pricing from "@/components/Pricing";
 import PaymentSolutionSection from "@/components/PaymentSolutionSection";
+import MagicBento from "@/components/ExampleSection";
 
 export default function Home() {
   return (
@@ -25,21 +26,33 @@ export default function Home() {
       <AnimatedCard />
 
       <PaymentSolutionSection></PaymentSolutionSection>
-        
-       {/* Pricing */}
+      <MagicBento
+        textAutoHide={true}
+        enableStars={true}
+        enableSpotlight={true}
+        enableBorderGlow={true}
+        enableTilt={true}
+        enableMagnetism={true}
+        clickEffect={true}
+        spotlightRadius={300}
+        particleCount={12}
+        glowColor="132, 0, 255"
+      />
+
+      {/* Pricing */}
       <Pricing className="py-30 px-2 lg:px-0"></Pricing>
-     
-     {/* Globe section */}
-    
+
+      {/* Globe section */}
+
       <GlobeDemo></GlobeDemo>
-  
+
       {/* Bootom CTA */}
       <div className="px-2 lg:px-0  container mx-auto">
         <CTA></CTA>
       </div>
       <div className="px-2 lg:px-0">
         {/* Footer */}
-      <Footer />
+        <Footer />
       </div>
     </div>
   );

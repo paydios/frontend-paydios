@@ -13,7 +13,6 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import FadeContent from './FadeContent';
-import { NeonGradientCard } from './magicui/neon-gradient-card';
 
 const PaymentSolutionSection = () => {
 
@@ -25,7 +24,7 @@ const PaymentSolutionSection = () => {
             <SectionTitle />
     
                 <FadeContent>
-                    <div className='container  mx-auto flex flex-col justify-between lg:flex-row gap-5 mx-auto  p-0 lg:p-7 rounded-lg' >
+                    <div className='container flex flex-col justify-between lg:flex-row gap-5 mx-auto  p-0 lg:p-7 rounded-lg' >
 
                         <Accordion type="single" collapsible className='w-full lg:w-3xl flex flex-col justify-center'>
                             <AccordionItem value="item-1">
